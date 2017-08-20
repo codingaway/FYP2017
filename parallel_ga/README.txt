@@ -1,7 +1,7 @@
 FYP - 2017
 ==========
     Author: Abdul Halim
-    Email: 13029096@studentmail.com
+    Email: 13029096@studentmail.ul.ie
     FYP Supervisor: J. J. Collins
     Dept. of CSIS
     University of Limerick
