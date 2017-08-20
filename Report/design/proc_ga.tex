@@ -1,0 +1,104 @@
+\section{Open Source Procedural GA}
+A procedural implementation of GA based on Zbigniew Michalewicz's book \textit{"Genetic Algorithms + Data Structures = Evolution Programs"}\citep{michalewicz:96} available under GNU public license. The original version of this implementation was done by Dennis Cormier and Sita Raghavan. From Department of Scientific Computing at Florida State University John Burkardt made a C++ version of source code available on their department's website \citep{Burkardt:17}. The slightly refactored version of this source code without changing the actual algorithms is included in Appendix \ref{sourcecodes}. Where the original code is put into 4 separate source files shown in \ref{src:params.hpp}, \ref{src:sga_proc.hpp}, \ref{src:sga.cpp} \& \ref{src:sga_proc.cpp}.
+
+
+This is a simple genetic algorithm implementation where the evaluation function takes positive values only and the fitness of an individual is the same as the value of the objective function.
+
+Each generation involves selecting the best members, performing crossover and mutation and then evaluating the resulting population, until the terminating condition is satisfied.
+
+Behaviour of this program is modified by defining parameters listed in Listing \ref{lst:procedural_ga_params} where POPSIZE is population size, MAXGEN is the number of generation to run, NVARS is the number of variables or genome in a chromosome, PXOVER and PMUTATION are the probabilities of crossover and  mutation respectively. However this program expects the permissible value ranges for each variable to be read from a text file.
+
+\begin{lstlisting}[language=C, caption={Parameter definitions.}, label={lst:procedural_ga_params}]
+# define POPSIZE 50
+# define MAXGENS 1000
+# define NVARS 3
+# define PXOVER 0.8
+# define PMUTATION 0.15
+\end{lstlisting}
+
+Listing \ref{lst:procedural_ga_struct} shows the data structure used for defining GENOTYPE which is a member of a population. The struct member .gene is a string of variables, .fitness is the fitness value .upper is the variable upper bounds, .lower: the variable lower bounds, .rfitness is the relative fitness and .cfitness is the cumulative fitness value. Relative and cumulative fitness values are used for elitist in a given generation.
+
+\begin{lstlisting}[language=C, caption={GENOTYPE: Data structure of population member.}, label={lst:procedural_ga_struct}]
+struct genotype
+{
+  double gene[NVARS];
+  double fitness;
+  double upper[NVARS];
+  double lower[NVARS];
+  double rfitness;
+  double cfitness;
+};
+\end{lstlisting}
+
+In Listing \ref{lst:procedural_ga_main} shows the for loop that is repeated for each generation cycle and perform the GA operations on current population. The select() procedure on line 3 perform a roulette wheel selection from current population. The elitist() procedure in line 9 performing an elitist operation which finds the best and the worst member of the current population. If the current best is better than last generation's best then replace it with current best otherwise replace the current worst with last generation best. 
+
+\begin{lstlisting}[language=C, caption={Main loop controlling the GA operations.}, label={lst:procedural_ga_main}]
+  for ( generation = 0; generation < MAXGENS; generation++ )
+  {
+    selector ( seed );
+    crossover ( seed );
+    mutate ( seed );
+    report ( generation );
+    evaluate ( );
+    elitist ( );
+  }
+\end{lstlisting}
+
+
+\subsubsection{Fitness function}
+The fitness function provided with this code base is very simple one. This function was implemented to handle only three variables chromosome. It performs a very simple calculation of $ fitness = x_1^2 - x_1 * x_2 + x_3 $. As can be seen in source code provided in Appendix C, the original codebase is slightly modified to facilitate introducing other fitness function. The modification can be seen in Listing \ref{lst:pga_fitness}. 
+
+\begin{lstlisting}[language=C, caption={Fitness function - Implementation of Griewank function}, label={lst:pga_fitness}]
+void evaluate ( int my_start, int row_count )
+{
+    switch(FITNESS_F) {
+        case F1:
+            return f1(my_start, row_count);
+            break;
+        case F8:
+            return f8(my_start, row_count);
+            break;
+        default:
+            break;
+    }
+}
+\end{lstlisting}
+
+And for f8() the Griewank function was implemented as shown in Listing \ref{lst:proc_griewank}. The Griewank function is defined as below:
+
+$fitness = 1 +  \sum_{i=1}^{i=n}(x_i^2/4000) - \prod_{i=1}^{i=n}cos(x_i/\sqrt{i}) $
+
+\begin{lstlisting}[language=C, caption={Fitness function - Implementation of Griewank function}, label={lst:proc_griewank}]
+void f8(int my_start, int row_count)
+{
+  int member;
+  int i;
+  double x[NVARS+1];
+  double part1, part2;
+  
+  int ends = my_start + row_count;
+  
+  for ( member = my_start; member < ends; member++ )
+  {
+    for ( i = 0; i < NVARS; i++ )
+    {
+      x[i+1] = population[member].gene[i];
+    }
+    
+    part1 = 0.0;
+    for(i = 1; i < NVARS; i++)
+    {
+        part1 += pow(x[i], 2) / 4000;
+    }
+    
+    part2 = 1.0;
+    for(i = 1; i < NVARS; i++)
+    {
+        part2 *= cos( x[i] / sqrt(i) );
+    }
+       
+    population[member].fitness = 1.0 + part1 - part2;
+  }
+  return;
+}
+\end{lstlisting}

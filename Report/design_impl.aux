@@ -1,0 +1,167 @@
+\relax 
+\providecommand{\transparent@use}[1]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Design and Implementation}{48}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Introduction}{48}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Setting up the Beowulf Cluster}{49}}
+\newlabel{beowulf_setup}{{3.2}{49}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Cluster components}{49}}
+\@writefile{toc}{\contentsline {paragraph}{Cluster Nodes}{49}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Layers in a Cluster\relax }}{50}}
+\newlabel{fig:cluster-layers}{{3.1}{50}}
+\@writefile{toc}{\contentsline {paragraph}{Interconnecting Hardware}{50}}
+\@writefile{toc}{\contentsline {paragraph}{Operating System}{50}}
+\@writefile{toc}{\contentsline {paragraph}{Message Passing Protocol}{51}}
+\@writefile{toc}{\contentsline {paragraph}{Parallel Program Library}{51}}
+\@writefile{toc}{\contentsline {paragraph}{Cluster management tools}{51}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Topological design}{51}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Virtual nodes}{51}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Physical nodes}{51}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces A typical Beowulf setup\relax }}{52}}
+\newlabel{fig:beowulf-cluster}{{3.2}{52}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.1}{\ignorespaces Virtual nodes configuration\relax }}{52}}
+\newlabel{tab:virt_node_conf}{{3.1}{52}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.2}{\ignorespaces Physical nodes configuration\relax }}{52}}
+\newlabel{tab:phy_node_conf}{{3.2}{52}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.5}Setup \& Configuration}{52}}
+\@writefile{toc}{\contentsline {subsubsection}{Setup steps}{52}}
+\@writefile{toc}{\contentsline {subsubsection}{Installing Operating System}{53}}
+\@writefile{toc}{\contentsline {subsubsection}{Network configuration - Master node}{53}}
+\@writefile{toc}{\contentsline {subsubsection}{Create MPI user}{55}}
+\@writefile{toc}{\contentsline {subsubsection}{Network File System configuration}{55}}
+\@writefile{toc}{\contentsline {subsubsection}{Configure password less communication}{56}}
+\@writefile{toc}{\contentsline {subsubsection}{Install MPI libraries, compiler and build tools}{58}}
+\@writefile{toc}{\contentsline {subsubsection}{Configuring MPI Process Manager}{58}}
+\newlabel{beowulf:process_manager}{{3.2.5}{58}}
+\citation{Goldberg:89}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Object-Oriented GA}{59}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces Class diagram of Object-oriented SGA\relax }}{61}}
+\newlabel{fig:sga_classdiagram}{{3.3}{61}}
+\citation{squyresoompi}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Issues with MPI support for Object-oriented paradigm}{62}}
+\citation{michalewicz:96}
+\citation{Burkardt:17}
+\@writefile{toc}{\contentsline {section}{\numberline {3.5}Open Source Procedural GA}{63}}
+\newlabel{lst:procedural_ga_params}{{3.1}{63}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}Parameter definitions.}{63}}
+\newlabel{lst:procedural_ga_struct}{{3.2}{64}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.2}GENOTYPE: Data structure of population member.}{64}}
+\newlabel{lst:procedural_ga_main}{{3.3}{64}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.3}Main loop controlling the GA operations.}{64}}
+\@writefile{toc}{\contentsline {subsubsection}{Fitness function}{65}}
+\newlabel{lst:pga_fitness}{{3.4}{65}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.4}Fitness function - Implementation of Griewank function}{65}}
+\newlabel{lst:proc_griewank}{{3.5}{65}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.5}Fitness function - Implementation of Griewank function}{65}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.6}Parallelising Procedural GA using MPI}{66}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.1}Parallel GA model}{66}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.2}Initialising MPI environment}{67}}
+\newlabel{lst:pga_initialise_mpi}{{3.6}{67}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.6}Parallel GA implementation using MPI: Source code of main()}{67}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.3}Creating MPI derived datatype for genotype}{67}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Flowchart diagram of Implemented master-slave Parallel GA\relax }}{68}}
+\newlabel{fig:flowchart_pga}{{3.4}{68}}
+\newlabel{lst:pga_mpi_create_struct}{{3.7}{69}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.7}Creating an MPI derived data type for genotype struct.}{69}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.4}Partitioning of data}{69}}
+\newlabel{lst:pga_partitioning}{{3.8}{69}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.8}Partitioning population data among nodes}{69}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.5}PGA v1}{70}}
+\@writefile{toc}{\contentsline {subsubsection}{Master-Slave Communication}{70}}
+\newlabel{lst:pga_mpi_main}{{3.9}{70}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.9}Master and slave pr}{70}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces PGA v1 model\relax }}{71}}
+\newlabel{fig:pga_model_v1}{{3.5}{71}}
+\@writefile{toc}{\contentsline {subsubsection}{Master process}{71}}
+\newlabel{lst:pga_master_process}{{3.10}{72}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.10}The master\_process() procedure.}{72}}
+\@writefile{toc}{\contentsline {subsubsection}{Slave process}{73}}
+\newlabel{lst:pga_slave_process}{{3.11}{73}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.11}The slave\_process() procedure.}{73}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.6}PGA v2}{73}}
+\@writefile{toc}{\contentsline {subsubsection}{Performance issue with PGA v1}{73}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces PGA v2 model\relax }}{74}}
+\newlabel{fig:pga_model_v2}{{3.6}{74}}
+\@writefile{toc}{\contentsline {subsubsection}{Using MPI Broadcast instead of explicit MPI Send/Recv}{74}}
+\newlabel{lst:pga_procedures}{{3.12}{75}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.12}PGA v2 main() procedures.}{75}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.7}PGA v3}{76}}
+\@writefile{toc}{\contentsline {subsubsection}{Running Time Analysis of node\_selector() Procedure}{76}}
+\newlabel{pga_runtime_analysis}{{3.6.7}{76}}
+\newlabel{lst:pga_select}{{3.13}{77}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.13}node\_select() procedure.}{77}}
+\@writefile{toc}{\contentsline {subsubsection}{Limiting Selection to Partial Population}{77}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces PGA v3 model\relax }}{78}}
+\newlabel{fig:pga_model_v3}{{3.7}{78}}
+\newlabel{lst:pga_select_changes}{{3.14}{78}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.14}Changes made in node\_select() procedures.}{78}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6.8}Issues with Serialising Dynamic Data}{79}}
+\newlabel{lst:gdb_output}{{3.6.8}{80}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.7}Testing}{83}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.1}Test Configuration}{83}}
+\newlabel{test_config}{{3.7.1}{83}}
+\newlabel{lst:config_hydra}{{3.15}{83}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.15}The hosts file configuration for Hydra.}{83}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.3}{\ignorespaces Parameters alues used with test cases.\relax }}{84}}
+\newlabel{tbl:test_params}{{3.3}{84}}
+\@writefile{lot}{\contentsline {table}{\numberline {3.4}{\ignorespaces Genome value range for 3 variables Griewank function\relax }}{84}}
+\newlabel{tbl:genome_range}{{3.4}{84}}
+\newlabel{lst:run_mpi}{{3.7.1}{85}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.7.2}Tests Outcome}{85}}
+\@writefile{toc}{\contentsline {subsubsection}{SGA Output}{85}}
+\@writefile{toc}{\contentsline {subsubsection}{PGA v1 Output}{85}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces SGA output - Top part\relax }}{86}}
+\newlabel{fig:test_sga_top}{{3.8}{86}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces SGA output - Bottom part\relax }}{86}}
+\newlabel{fig:test_sga_bottom}{{3.9}{86}}
+\@writefile{toc}{\contentsline {subsubsection}{PGA v2 Output}{86}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces PGA v1 output - Top part\relax }}{87}}
+\newlabel{fig:test_pga_top}{{3.10}{87}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces PGA v2 output - Bottom part\relax }}{87}}
+\newlabel{fig:test_pga_bottom}{{3.11}{87}}
+\@writefile{toc}{\contentsline {subsubsection}{PGA v3 Output}{87}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces PGA v1 output - Top part\relax }}{88}}
+\newlabel{fig:test_pgav2_top}{{3.12}{88}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces PGA v2 output - Bottom part\relax }}{88}}
+\newlabel{fig:test_pgav2_bottom}{{3.13}{88}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.14}{\ignorespaces PGA v3 output - Top part\relax }}{89}}
+\newlabel{fig:test_pgav3_top}{{3.14}{89}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.15}{\ignorespaces PGA v3 output - Bottom part\relax }}{89}}
+\newlabel{fig:test_pgav3_bottom}{{3.15}{89}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.8}Discussion}{90}}
+\@setckpt{design_impl}{
+\setcounter{page}{91}
+\setcounter{equation}{0}
+\setcounter{enumi}{2}
+\setcounter{enumii}{4}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{2}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{3}
+\setcounter{section}{8}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{15}
+\setcounter{table}{4}
+\setcounter{r@tfl@t}{0}
+\setcounter{ContinuedFloat}{0}
+\setcounter{subfigure}{0}
+\setcounter{subtable}{0}
+\setcounter{NAT@ctr}{0}
+\setcounter{csvinputline}{0}
+\setcounter{csvrow}{0}
+\setcounter{csvcol}{0}
+\setcounter{@pps}{0}
+\setcounter{@ppsavesec}{0}
+\setcounter{@ppsaveapp}{0}
+\setcounter{KVtest}{0}
+\setcounter{svgfigure}{0}
+\setcounter{float@type}{8}
+\setcounter{lstnumber}{2}
+\setcounter{lstlisting}{15}
+}

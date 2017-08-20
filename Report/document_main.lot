@@ -1,0 +1,20 @@
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Virtual nodes configuration\relax }}{52}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Physical nodes configuration\relax }}{52}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Parameters alues used with test cases.\relax }}{84}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Genome value range for 3 variables Griewank function\relax }}{84}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces A sample runs using population size of 5000 to determine average runtime(seconds) for PGA v1, PGA v2 and PGA v3.\relax }}{93}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Experiment 1 data using PGA v1\relax }}{94}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Experiment 2 data using PGA v1\relax }}{96}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Experiment 3 data using PGA v2\relax }}{98}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Experiment 4 data using PGA v2\relax }}{100}
+\contentsline {table}{\numberline {4.6}{\ignorespaces Experiment 5 data using PGA v3\relax }}{102}
+\contentsline {table}{\numberline {4.7}{\ignorespaces Experiment 6 data using PGA v2\relax }}{104}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

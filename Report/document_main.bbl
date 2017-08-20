@@ -1,0 +1,201 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Akl \harvardand\ Nagy}{2009}{Akl2009}
+Akl, S.~G. \harvardand\ Nagy, M.  \harvardyearleft 2009\harvardyearright , {\em
+  Introduction to Parallel Computation}, Springer London, London, pp.~43--80.
+
+\harvarditem{Atom.me.gatech.edu}{2016}{Beowulf:img}
+Atom.me.gatech.edu  \harvardyearleft 2016\harvardyearright , `Basic beowulf
+  cluster', [image online] available:
+  \url{http://atom.me.gatech.edu/scyld-doc/users-guide/images/NetTopSimple.png}.
+\newblock [accessed: 2 January 2017].
+
+\harvarditem{Barney}{2016{\em a}}{Barney:16}
+Barney, B.  \harvardyearleft 2016{\em a}\harvardyearright , `Introduction to
+  parallel computing', [online] available:
+  \url{https://computing.llnl.gov/tutorials/parallel_comp/}.
+\newblock [accessed: 4 October, 2016].
+
+\harvarditem{Barney}{2016{\em b}}{Barney:16-mpi}
+Barney, B.  \harvardyearleft 2016{\em b}\harvardyearright , `Message passing
+  interface (mpi)', [online] available:
+  \url{https://computing.llnl.gov/tutorials/mpi/}.
+\newblock [accessed: 23 November 2016].
+
+\harvarditem{Barney}{2016{\em c}}{Barney:16-openmp}
+Barney, B.  \harvardyearleft 2016{\em c}\harvardyearright , `Openmp', [online]
+  available: \url{https://computing.llnl.gov/tutorials/openMP/}.
+\newblock [accessed: 4 October 2016].
+
+\harvarditem{Beowulf.org}{2016}{Beowulf.org}
+Beowulf.org  \harvardyearleft 2016\harvardyearright , `Beowulf project
+  overview', [online] available: \url{http://www.beowulf.org/overview/faq.html
+  }.
+\newblock [accessed: 28 December 2016].
+
+\harvarditem{Burkardt}{2017}{Burkardt:17}
+Burkardt, J.  \harvardyearleft 2017\harvardyearright ,
+  `https://people.sc.fsu.edu/\textasciitilde{}jburkardt/cpp\_src/simple\_ga/simple\_ga.cpp',
+  \url{https://people.sc.fsu.edu/~jburkardt/cpp_src/simple_ga/simple_ga.cpp}.
+\newblock (Accessed on 28/01/2017).
+
+\harvarditem{Cant{\'u}-Paz}{1998}{cantu:98}
+Cant{\'u}-Paz, E.  \harvardyearleft 1998\harvardyearright , `A survey of
+  parallel genetic algorithms', {\em Calculateurs paralleles, reseaux et
+  systems repartis} {\bf 10}(2),~141--171.
+
+\harvarditem[Chapman et~al.]{Chapman, Jost \harvardand\ Van
+  Der~Pas}{2008}{chapman08}
+Chapman, B., Jost, G. \harvardand\ Van Der~Pas, R.  \harvardyearleft
+  2008\harvardyearright , {\em Using OpenMP: portable shared memory parallel
+  programming}, Vol.~10, MIT press.
+
+\harvarditem{Cox \harvardand\ Hinkley}{1979}{cox1979theoretical}
+Cox, D.~R. \harvardand\ Hinkley, D.~V.  \harvardyearleft 1979\harvardyearright
+  , {\em Theoretical statistics}, CRC Press.
+
+\harvarditem{Dagum \harvardand\ Menon}{1998}{dagum:98}
+Dagum, L. \harvardand\ Menon, R.  \harvardyearleft 1998\harvardyearright ,
+  `Openmp: An industry standard api for shared-memory programming', {\em IEEE
+  Computational Science \& Engineering} {\bf 5}(1),~46--55.
+
+\harvarditem{{Dartmouth College}}{2011}{Dartmouth:mpi}
+{Dartmouth College}  \harvardyearleft 2011\harvardyearright , `Pros and cons of
+  openmp and mpi', [online] available:
+  \url{https://www.dartmouth.edu/~rc/classes/intro_mpi/parallel_prog_compare.html}.
+\newblock [accessed: 28 December 2016].
+
+\harvarditem{Eaton}{2015}{eaton2015}
+Eaton, M.  \harvardyearleft 2015\harvardyearright , Introduction, {\em in}
+  `Evolutionary Humanoid Robotics', Springer, pp.~1--7.
+
+\harvarditem{Goldberg}{1989}{Goldberg:89}
+Goldberg, D.~E.  \harvardyearleft 1989\harvardyearright , {\em Genetic
+  Algorithms in Search, Optimization, and Machine Learning}, Addison-Wesley,
+  Massachusetts.
+
+\harvarditem[Gropp et~al.]{Gropp, Lusk, Doss \harvardand\
+  Skjellum}{1996}{Gropp:96}
+Gropp, W., Lusk, E., Doss, N. \harvardand\ Skjellum, A.  \harvardyearleft
+  1996\harvardyearright , `A high-performance, portable implementation of the
+  mpi message passing interface standard', {\em Parallel computing} {\bf
+  22}(6),~789--828.
+
+\harvarditem[Gropp et~al.]{Gropp, Lusk \harvardand\ Skjellum}{1999}{Gropp:99}
+Gropp, W., Lusk, E. \harvardand\ Skjellum, A.  \harvardyearleft
+  1999\harvardyearright , {\em Using MPI: Portable Parallel Programming with
+  the Message-Passing Interface}, The MIT Press, Massachusetts.
+
+\harvarditem[Gropp et~al.]{Gropp, Lusk \harvardand\
+  Sterling}{2003}{Gropp:beowulf}
+Gropp, W., Lusk, E. \harvardand\ Sterling, T.  \harvardyearleft
+  2003\harvardyearright , {\em Beowulf Cluster Computing with Linux}, 2nd edn,
+  The MIT Press, Massachusetts.
+
+\harvarditem{Gustafson}{1988}{gustafson:88}
+Gustafson, J.~L.  \harvardyearleft 1988\harvardyearright , `Reevaluating
+  amdahl's law', {\em Communications of the ACM} {\bf 31}(5),~532--533.
+
+\harvarditem[Kim et~al.]{Kim, Austin, Baauw, Mudge, Flautner, Hu, Irwin,
+  Kandemir \harvardand\ Narayanan}{2003}{kim2003leakage}
+Kim, N.~S., Austin, T., Baauw, D., Mudge, T., Flautner, K., Hu, J.~S., Irwin,
+  M.~J., Kandemir, M. \harvardand\ Narayanan, V.  \harvardyearleft
+  2003\harvardyearright , `Leakage current: Moore's law meets static power',
+  {\em computer} {\bf 36}(12),~68--75.
+
+\harvarditem{Konfrst}{2004}{konfrst:04para}
+Konfrst, Z.  \harvardyearleft 2004\harvardyearright , Parallel genetic
+  algorithms: Advances, computing trends, applications and perspectives, {\em
+  in} `Parallel and Distributed Processing Symposium, 2004. Proceedings. 18th
+  International', IEEE, p.~162.
+
+\harvarditem[Luque et~al.]{Luque, Alba \harvardand\ Dorronsoro}{2005}{luque:05}
+Luque, G., Alba, E. \harvardand\ Dorronsoro, B.  \harvardyearleft
+  2005\harvardyearright , `Parallel genetic algorithms', {\em Parallel
+  metaheuristics: A new class of algorithms} pp.~107--126.
+
+\harvarditem{Michalewicz}{1996}{michalewicz:96}
+Michalewicz, Z.  \harvardyearleft 1996\harvardyearright , {\em Genetic
+  Algorithms + Data Structures = Evolution Programs (3rd Ed.)},
+  Springer-Verlag, London, UK, UK.
+
+\harvarditem{Mpi-forum.org}{1995}{mpi-forum:type-match}
+Mpi-forum.org  \harvardyearleft 1995\harvardyearright , `Mpi: A message-passing
+  interface standard - type matching rules', [online] available:
+  \url{http://mpi-forum.org/docs/mpi-1.1/mpi-11-html/node37.html}.
+\newblock [accessed: 28 December 2016].
+
+\harvarditem{{Mpi-forum.org}}{2016}{mpi-forum:16}
+{Mpi-forum.org}  \harvardyearleft 2016\harvardyearright , `Mpi: A
+  message-passing interface standard - type matching rules', [online]
+  available: \url{http://mpi-forum.org/}.
+\newblock [accessed: 28 December 2016].
+
+\harvarditem{Murphy}{2003}{Murphy:03}
+Murphy, R.  \harvardyearleft 2003\harvardyearright , `A generic parallel
+  genetic algorithm',
+  \url{https://computing.llnl.gov/tutorials/parallel_comp/}.
+
+\harvarditem{Obitko}{1998}{Obitko:98}
+Obitko, M.  \harvardyearleft 1998\harvardyearright , `Genetic algorithm
+  description - introduction to genetic algorithms', [online] available:
+  \url{http://www.obitko.com/tutorials/genetic-algorithms/ga-basic-description.php}.
+\newblock [accessed: 2 January 2017].
+
+\harvarditem{Perkowski}{2010}{Perkowski:10}
+Perkowski, M.~A.  \harvardyearleft 2010\harvardyearright , `Introduction to
+  parallel programming', [online] available:
+  \url{http://web.cecs.pdx.edu/~mperkows/CLASS_VHDL_99/050.Introduction-to-Parallel-Computing.pdf}.
+\newblock [accessed: 28 December 2016].
+
+\harvarditem{Pit}{1995}{pit:95}
+Pit, L.~J.  \harvardyearleft 1995\harvardyearright , `Parallel genetic
+  algorithms', {\em Department of Computer Science, Master Thesis, Leiden
+  University, Holanda} .
+
+\harvarditem{{RTC Magazine}}{2013}{rtc_amdals:online}
+{RTC Magazine}  \harvardyearleft 2013\harvardyearright , `Using opencl for
+  network acceleration | rtc magazine', [online] available:
+  \url{http://rtcmagazine.com/articles/view/103209}.
+\newblock (Accessed on 03/12/2016).
+
+\harvarditem{Schaller}{1997}{schaller1997moore}
+Schaller, R.~R.  \harvardyearleft 1997\harvardyearright , `Moore's law: past,
+  present and future', {\em IEEE spectrum} {\bf 34}(6),~52--59.
+
+\harvarditem[Squyres et~al.]{Squyres, Willcock, McCandless, Rijks \harvardand\
+  Lumsdaine}{1996}{squyresoompi}
+Squyres, J.~M., Willcock, J.~J., McCandless, B.~C., Rijks, P.~W. \harvardand\
+  Lumsdaine, A.  \harvardyearleft 1996\harvardyearright , `Object oriented mpi
+  (oompi): A c++ class library for mpi version 1.0. 3'.
+
+\harvarditem{Sutter}{2005}{Sutter:05}
+Sutter, H.  \harvardyearleft 2005\harvardyearright , `The free lunch is over: A
+  fundamental turn toward concurrency in software', [online] available:
+  \url{http://www.gotw.ca/publications/concurrency-ddj.htm}.
+\newblock [accessed: 28 December 2016].
+
+\harvarditem{Thiruvathukal}{2005}{Thiru:05}
+Thiruvathukal, G.~K.  \harvardyearleft 2005\harvardyearright , `Guest editors'
+  introduction: Cluster computing', {\em Computing in Science Engineering} {\bf
+  7}(2),~11--13.
+
+\harvarditem{Top500.org}{2017}{Top500:cluster}
+Top500.org  \harvardyearleft 2017\harvardyearright , `List statistics | top500
+  supercomputer sites', [online] available:
+  \url{https://www.top500.org/statistics/list/}.
+\newblock [accessed: 2 January 2017].
+
+\harvarditem{Tutorialspoint.com}{2017}{tutp.com:98ga}
+Tutorialspoint.com  \harvardyearleft 2017\harvardyearright , `Genetic
+  algorithms', [online] available:
+  \url{https://www.tutorialspoint.com/genetic_algorithms/index.htm}.
+\newblock [accessed: 2 January 2017].
+
+\harvarditem{{Wikipedia user: A1}}{2007}{A1:fork-join}
+{Wikipedia user: A1}  \harvardyearleft 2007\harvardyearright , `Illustration of
+  the fork-join model of parallel programming.', [online] available:
+  \url{https://en.wikipedia.org/wiki/File:Fork_join.svg}.
+\newblock [accessed: December 21, 2016].
+
+\end{thebibliography}

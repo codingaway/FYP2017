@@ -1,0 +1,191 @@
+\select@language {english}
+\contentsline {section}{Abstract}{i}
+\contentsline {section}{Acknowledgement}{ii}
+\contentsline {section}{Declaration}{iii}
+\contentsline {section}{List of figures}{x}
+\contentsline {section}{List of tables}{xi}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Summary}{1}
+\contentsline {section}{\numberline {1.2}Objectives}{3}
+\contentsline {section}{\numberline {1.3}Contributions}{4}
+\contentsline {section}{\numberline {1.4}Methodology}{4}
+\contentsline {section}{\numberline {1.5}Overview of the Report}{5}
+\contentsline {paragraph}{Introduction}{6}
+\contentsline {paragraph}{Background Research}{6}
+\contentsline {paragraph}{Design and Implementation}{6}
+\contentsline {paragraph}{Empirical Studies}{6}
+\contentsline {paragraph}{Discussion and Conclusions}{6}
+\contentsline {section}{\numberline {1.6}Motivation}{6}
+\contentsline {chapter}{\numberline {2}Background}{8}
+\contentsline {section}{\numberline {2.1}Parallel Computing}{8}
+\contentsline {subsection}{\numberline {2.1.1}What is Parallel Computing}{8}
+\contentsline {subsection}{\numberline {2.1.2}Why Parallelism}{8}
+\contentsline {subsection}{\numberline {2.1.3}Sequential vs. Parallel execution}{9}
+\contentsline {subsubsection}{Sequential execution}{9}
+\contentsline {subsubsection}{Parallel execution}{9}
+\contentsline {subsection}{\numberline {2.1.4}Types of Parallelism}{10}
+\contentsline {paragraph}{Data parallelism}{10}
+\contentsline {paragraph}{Task Parallelism}{10}
+\contentsline {paragraph}{Hybrid data/task parallelism}{11}
+\contentsline {subsection}{\numberline {2.1.5}Flynn's Classical Taxonomy}{11}
+\contentsline {subsection}{\numberline {2.1.6}Classification of Parallel Computers}{11}
+\contentsline {subsection}{\numberline {2.1.7}Parallel Computer Memory Architecture}{12}
+\contentsline {paragraph}{Shared Memory model}{12}
+\contentsline {paragraph}{Distributed Memory Model}{13}
+\contentsline {paragraph}{Hybrid Model}{13}
+\contentsline {subsection}{\numberline {2.1.8}Limitation of Parallel Programming}{14}
+\contentsline {subsubsection}{Amdahl's Law}{14}
+\contentsline {subsubsection}{Gustafson's Law}{14}
+\contentsline {subsection}{\numberline {2.1.9}Application}{17}
+\contentsline {section}{\numberline {2.2}OpenMP and MPI}{17}
+\contentsline {subsection}{\numberline {2.2.1}OpenMP}{17}
+\contentsline {subsubsection}{Thread based parallelism}{18}
+\contentsline {subsubsection}{OpenMP Components}{19}
+\contentsline {subsubsection}{Runtime Library Routines}{20}
+\contentsline {subsubsection}{Environment Variables}{20}
+\contentsline {subsubsection}{Compiler Directives}{20}
+\contentsline {paragraph}{Parallel region construct}{21}
+\contentsline {paragraph}{Work-sharing constructs}{21}
+\contentsline {paragraph}{Synchronisation constructs}{22}
+\contentsline {paragraph}{Data-scoped attribute clauses}{23}
+\contentsline {subsubsection}{Advantages \& Disadvantages of OpenMP}{23}
+\contentsline {paragraph}{Advantages}{23}
+\contentsline {paragraph}{Disdvantages}{23}
+\contentsline {subsection}{\numberline {2.2.2}MPI}{24}
+\contentsline {subsubsection}{MPI Concepts}{24}
+\contentsline {subsubsection}{General MPI Program Structure}{25}
+\contentsline {subsubsection}{Groups and Communicators}{25}
+\contentsline {subsubsection}{Rank}{25}
+\contentsline {subsubsection}{Error Handling}{26}
+\contentsline {subsubsection}{Point-to-Point Communication}{27}
+\contentsline {subsubsection}{Collectives Communication}{31}
+\contentsline {subsubsection}{Environment management}{31}
+\contentsline {subsubsection}{Derived Data-types}{32}
+\contentsline {subsubsection}{MPI advantages}{32}
+\contentsline {subsection}{\numberline {2.2.3}Hybrid Model}{33}
+\contentsline {section}{\numberline {2.3}Beowulf Clusters}{33}
+\contentsline {subsection}{\numberline {2.3.1}Architecture}{34}
+\contentsline {subsection}{\numberline {2.3.2}Hardware}{34}
+\contentsline {subsection}{\numberline {2.3.3}Networking}{35}
+\contentsline {subsection}{\numberline {2.3.4}Software Infrastructure}{35}
+\contentsline {paragraph}{Operating Systems}{35}
+\contentsline {paragraph}{Middleware}{35}
+\contentsline {paragraph}{Job control}{36}
+\contentsline {section}{\numberline {2.4}Simple Genetic Algorithm (SGA)}{36}
+\contentsline {subsubsection}{Optimisation using GA}{36}
+\contentsline {subsubsection}{GA terminology}{37}
+\contentsline {paragraph}{Population:}{37}
+\contentsline {paragraph}{Chromosome:}{37}
+\contentsline {paragraph}{Gene:}{37}
+\contentsline {paragraph}{Allele:}{37}
+\contentsline {paragraph}{Locus:}{37}
+\contentsline {paragraph}{Genotype:}{37}
+\contentsline {paragraph}{Phenotype:}{37}
+\contentsline {subsubsection}{Computer Implementation}{38}
+\contentsline {subsubsection}{Genetic Operators}{38}
+\contentsline {subsubsection}{Selection}{38}
+\contentsline {paragraph}{Roulette wheel selection:}{39}
+\contentsline {paragraph}{Rank selection:}{39}
+\contentsline {paragraph}{Tournament selection:}{39}
+\contentsline {subsubsection}{Crossover}{39}
+\contentsline {paragraph}{Single-point crossover}{39}
+\contentsline {paragraph}{Multipoint crossover}{39}
+\contentsline {paragraph}{Uniform crossover}{40}
+\contentsline {subsubsection}{Mutation}{41}
+\contentsline {subsubsection}{Simple Genetic Algorithm}{41}
+\contentsline {subsubsection}{Application of GA}{43}
+\contentsline {subsubsection}{Advantages}{43}
+\contentsline {subsubsection}{Limitations}{44}
+\contentsline {section}{\numberline {2.5}Parallel GA}{44}
+\contentsline {paragraph}{Data parallelism}{44}
+\contentsline {paragraph}{Task parallelism}{45}
+\contentsline {subsection}{\numberline {2.5.1}Classification of Parallel GAs}{45}
+\contentsline {subsection}{\numberline {2.5.2}Master-slave Model - Global population}{45}
+\contentsline {subsection}{\numberline {2.5.3}Distributed Model - Coarse grained}{46}
+\contentsline {subsection}{\numberline {2.5.4}Cellular Model - Fine grained}{46}
+\contentsline {chapter}{\numberline {3}Design and Implementation}{48}
+\contentsline {section}{\numberline {3.1}Introduction}{48}
+\contentsline {section}{\numberline {3.2}Setting up the Beowulf Cluster}{49}
+\contentsline {subsection}{\numberline {3.2.1}Cluster components}{49}
+\contentsline {paragraph}{Cluster Nodes}{49}
+\contentsline {paragraph}{Interconnecting Hardware}{50}
+\contentsline {paragraph}{Operating System}{50}
+\contentsline {paragraph}{Message Passing Protocol}{51}
+\contentsline {paragraph}{Parallel Program Library}{51}
+\contentsline {paragraph}{Cluster management tools}{51}
+\contentsline {subsection}{\numberline {3.2.2}Topological design}{51}
+\contentsline {subsection}{\numberline {3.2.3}Virtual nodes}{51}
+\contentsline {subsection}{\numberline {3.2.4}Physical nodes}{51}
+\contentsline {subsection}{\numberline {3.2.5}Setup \& Configuration}{52}
+\contentsline {subsubsection}{Setup steps}{52}
+\contentsline {subsubsection}{Installing Operating System}{53}
+\contentsline {subsubsection}{Network configuration - Master node}{53}
+\contentsline {subsubsection}{Create MPI user}{55}
+\contentsline {subsubsection}{Network File System configuration}{55}
+\contentsline {subsubsection}{Configure password less communication}{56}
+\contentsline {subsubsection}{Install MPI libraries, compiler and build tools}{58}
+\contentsline {subsubsection}{Configuring MPI Process Manager}{58}
+\contentsline {section}{\numberline {3.3}Object-Oriented GA}{59}
+\contentsline {section}{\numberline {3.4}Issues with MPI support for Object-oriented paradigm}{62}
+\contentsline {section}{\numberline {3.5}Open Source Procedural GA}{63}
+\contentsline {subsubsection}{Fitness function}{65}
+\contentsline {section}{\numberline {3.6}Parallelising Procedural GA using MPI}{66}
+\contentsline {subsection}{\numberline {3.6.1}Parallel GA model}{66}
+\contentsline {subsection}{\numberline {3.6.2}Initialising MPI environment}{67}
+\contentsline {subsection}{\numberline {3.6.3}Creating MPI derived datatype for genotype}{67}
+\contentsline {subsection}{\numberline {3.6.4}Partitioning of data}{69}
+\contentsline {subsection}{\numberline {3.6.5}PGA v1}{70}
+\contentsline {subsubsection}{Master-Slave Communication}{70}
+\contentsline {subsubsection}{Master process}{71}
+\contentsline {subsubsection}{Slave process}{73}
+\contentsline {subsection}{\numberline {3.6.6}PGA v2}{73}
+\contentsline {subsubsection}{Performance issue with PGA v1}{73}
+\contentsline {subsubsection}{Using MPI Broadcast instead of explicit MPI Send/Recv}{74}
+\contentsline {subsection}{\numberline {3.6.7}PGA v3}{76}
+\contentsline {subsubsection}{Running Time Analysis of node\_selector() Procedure}{76}
+\contentsline {subsubsection}{Limiting Selection to Partial Population}{77}
+\contentsline {subsection}{\numberline {3.6.8}Issues with Serialising Dynamic Data}{79}
+\contentsline {section}{\numberline {3.7}Testing}{83}
+\contentsline {subsection}{\numberline {3.7.1}Test Configuration}{83}
+\contentsline {subsection}{\numberline {3.7.2}Tests Outcome}{85}
+\contentsline {subsubsection}{SGA Output}{85}
+\contentsline {subsubsection}{PGA v1 Output}{85}
+\contentsline {subsubsection}{PGA v2 Output}{86}
+\contentsline {subsubsection}{PGA v3 Output}{87}
+\contentsline {section}{\numberline {3.8}Discussion}{90}
+\contentsline {chapter}{\numberline {4}Empirical studies}{91}
+\contentsline {section}{\numberline {4.1}Introduction}{91}
+\contentsline {section}{\numberline {4.2}Experiments using PGA v1}{94}
+\contentsline {subsection}{\numberline {4.2.1}Experiment 1: Varying number of processes}{94}
+\contentsline {subsubsection}{Objective}{94}
+\contentsline {subsubsection}{Discussion}{95}
+\contentsline {subsection}{\numberline {4.2.2}Experiment 2: Varying population size}{95}
+\contentsline {subsubsection}{Objective}{95}
+\contentsline {subsubsection}{Discussion}{97}
+\contentsline {section}{\numberline {4.3}Experiments using PGA v2}{97}
+\contentsline {subsection}{\numberline {4.3.1}Experiment 3: Varying number of processes}{97}
+\contentsline {subsubsection}{Objective}{97}
+\contentsline {subsubsection}{Discussion}{99}
+\contentsline {subsection}{\numberline {4.3.2}Experiment 4: Varying population size}{99}
+\contentsline {subsubsection}{Objective}{99}
+\contentsline {subsubsection}{Discussion}{101}
+\contentsline {section}{\numberline {4.4}Experiments using PGA v3}{102}
+\contentsline {subsection}{\numberline {4.4.1}Experiment 5: Varying number of processes}{102}
+\contentsline {subsubsection}{Objective}{102}
+\contentsline {subsubsection}{Discussion}{103}
+\contentsline {subsection}{\numberline {4.4.2}Experiment 6: Varying population size}{104}
+\contentsline {subsubsection}{Objective}{104}
+\contentsline {subsubsection}{Discussion}{106}
+\contentsline {chapter}{\numberline {5}Conclusions}{107}
+\contentsline {chapter}{Appendices}{113}
+\contentsline {chapter}{\numberline {A}Project plans}{114}
+\contentsline {chapter}{\numberline {B}Git logs}{116}
+\contentsline {chapter}{\numberline {C}Project source codes}{117}
+\contentsline {section}{\numberline {C.1}params.hpp}{117}
+\contentsline {section}{\numberline {C.2}sga\_proc.hpp}{117}
+\contentsline {section}{\numberline {C.3}sga.cpp}{118}
+\contentsline {section}{\numberline {C.4}pga\_proc.hpp}{121}
+\contentsline {section}{\numberline {C.5}pga.cpp}{122}
+\contentsline {section}{\numberline {C.6}pgav2.cpp}{125}
+\contentsline {section}{\numberline {C.7}sga\_proc.cpp}{129}
+\contentsline {section}{\numberline {C.8}pga\_proc.cpp}{149}

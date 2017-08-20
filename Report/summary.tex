@@ -1,0 +1,18 @@
+\chapter{Project Summary}
+\label{summary}
+This project was undertaken to study and explore the parallel programming paradigm using the Message Passing Interface(MPI) API on a distributed-memory model architecture and to conduct an empirical study on performance analysis of a parallel Simple Genetic Algorithm utilising on a Cluster. 
+
+Since, most computers are now multi-core systems the shared-memory parallelism goes hands in hands with distributed-memory model. Thus this project involve studying OpenMP, a popular multi-threading API in C/C++ programming language.
+
+Parallelism is an important aspect in computing because we no longer live in a world where we could just expect that the Moor's law will take care of all of the performance needs. Processor's clock speed are not getting much faster as it used to be in years before. The transistors sizes are shrunk so much that we are now facing the challenges on physical limitation of matter and laws of the universe. Increasing clock speed is no longer a viable solution for improve computing performance. In his infamous article titled \textit{"The Free Lunch Is Over"} Herb Sutter went on a great details why it is not possible to add on more clock speed on the processors any longer\citep{Sutter:05}. Hardware vendors shifted their focus on adding more processing cores in a single silicon die to add more speed. But using these cores in an efficient and scalable manner can be very challenging.
+
+Further more, many problems are so large and/or complex that  it is impractical or impossible to solve them on a single machine. Parallel processing is essential for modelling and simulating real world phenomena. These problems are too complex and large to process sequentially.
+
+There are number of challenges in parallel programming. These challenges include finding concurrency in a program, tasks decomposition \& scheduling, synchronisation \& communication, scaling and debugging. As part of learning the parallel programming paradigm it is intended to research on this challenges and explore the techniques and best practices available.
+
+Genetic Algorithms(GAs) are adaptive heuristic search and optimisation algorithms base on evolutionary ideas of natural selection and genetics. GAs have a wide range of interesting application area from machine learning to robotics, engineering design, financial and investment decision making.
+
+Computer cluster is group of computers connected to a local area network that can run parallel applications. Beowulf cluster is a parallel computing infrastructure that originated with the idea of processing tasks in parallel by leveraging commodity hardware and open source software. There are many aspects in GAs that can take advantages of parallel processing for improving performance and efficiency and better results. In this project it is intended to implement a parallel Simple Genetic Algorithm and analysis the performance gains by running it on a Beowulf cluster using Message Passing Interface.
+
+For this project a Beowulf cluster was implemented. At first the Beowulf was simulated on a VirtualBox in a portable computer. Later on the cluster was implemented using inexpensive commodity hardware. The popular MPI implementation MPICH4.0 was installed in both setup to provide the MPI environment to compile and run parallel GA's for this project. This involved carrying out other required installation, configuring and administrative tasks on Ubuntu Server 16.04 Linux distribution.  
+ 

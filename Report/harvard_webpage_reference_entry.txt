@@ -1,0 +1,7 @@
+ @misc{ wiki:xxx,
+   author = "Wikipedia",
+   title = "LaTeX --- Wikipedia{,} The Free Encyclopedia",
+   year = "2011",
+   url = "\url{https://en.wikipedia.org/w/index.php?title=LaTeX&oldid=413720397}",
+   note = "[Online; accessed 13-February-2011]"
+ }

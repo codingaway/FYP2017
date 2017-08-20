@@ -1,0 +1,94 @@
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\chapter{Introduction}
+\label{intro}
+\section{Summary}
+This project explores the Message Passing Interface (MPI) parallel programming paradigm targeting a distributed memory architecture. A Simple Genetic Algorithm (SGA) is parallelised using MPI and deployed on a cluster. An empirically-based analysis of the performance is then presented.
+
+From the early days, computers were traditionally programmed to execute instructions sequentially. Software Engineers have traditionally relied on Moore's Law \citep{Sutter:05} to satisfy their requirement for performance for their serial programs. Moore's Law \citep{schaller1997moore} states that there is a doubling of the transistor count every 18th months, an effective doubling of the workload that the CPU can accommodate . However, it is becoming more difficult to dissipate the heat from chips with increasing transistor count\citep{kim2003leakage}. An alternative approach \citep{Sutter:05} is to increase the number of cores and run them at slower clock speeds. Programmers are now faced with the challenge of parallelising their serial application in order to exploit the parallel deployment infrastructure.
+
+Todays, a smart phones in one's hand packs more computing power than some supercomputers in 1960's. Multi-core systems are everywhere. The biggest challenge programmers face today is utilising these computing power efficiently and effectively. There are some problems that can only be addressed using parallel processing.
+
+Parallel processing is the execution of a program instructions among multiple processors concurrently with the objective of running it in less time\citep{Barney:16}. Parallelism is an important aspect in computing because we no longer live in a world where we could just expect that the Moore's Law will take care of all of the performance needs. Processor's clock speed are not getting much faster as it used to be in years before. The transistors sizes are shrunk so much that we are now facing the challenges on physical limitation of matter and laws of the universe. Increasing clock speed is no longer a viable solution for improve computing performance. In his infamous article titled \textit{"The Free Lunch Is Over"} Herb Sutter went on a great details why it is not possible to add on more clock speed on the processors any longer\citep{Sutter:05}. Hardware vendors shifted their focus on adding more processing cores in a single silicon die to add more speed. But using these cores in an efficient and scalable manner can be very challenging.
+
+Further more, many problems are so large and/or complex that  it is impractical or impossible to solve them on a single machine. Parallel processing is essential for modelling and simulating real world phenomena. These problems are too complex and large to process sequentially.
+
+Parallel solutions sought for problems that demand speed, process a huge amount of data, time-sensitive or time-critical(real time) \citep{Barney:16}. In general, any problems that is computation greedy better suited for parallel implementation. But not all programs are suitable for executing in this manner. In order to execute a program in parallel it must have some regions that can be executed concurrently without affecting the end result \citep{Sutter:05}. There are number of challenges in parallel programming. These challenges include finding concurrency in a program, tasks decomposition \& scheduling, synchronisation \& communication, scaling and debugging \citep{Sutter:05}  . As part of learning the parallel programming paradigm it was intended to research on these challenges and explore the techniques and best practices available.
+
+Genetic Algorithms(GAs) are adaptive heuristic search and optimisation algorithms based on evolutionary ideas of natural selection and genetics\citep{Goldberg:89}. GAs powerful search and optimisation techniques are found to be very useful and effective for solving problems in many different disciplines. GAs have a wide range of interesting application area from machine learning to robotics, engineering design, financial and investment decision making\citep{konfrst:04para}. There are many aspects in GAs that can take advantages of parallel processing for improving performance and efficiency and better results. Parallel implementation of GAs promise a substantial gains in performance\citep{cantu:98}.
+
+Computer cluster is group of computers connected to a local area network that can run parallel applications\citep{Gropp:beowulf}. Beowulf cluster is a parallel computing infrastructure that originated with the idea of processing tasks in parallel by leveraging commodity hardware and open source software\citep{Beowulf.org}.
+ 
+This project is aimed at parallelising a sequential SGA to run on a distributed-memory model parallel environment - Beowulf cluster, using Message Passing Interface (MPI), and analyse the performance. MPI is a standard specification for Message-Passing parallel programming model for distributed-memory system in which data is moved from one process?s address space to another through cooperative message exchange \citep{Gropp:99}. For this project a Beowulf cluster was implemented. At first, the Beowulf was simulated on a VirtualBox in a portable computer. Later on, the cluster was implemented using inexpensive commodity hardware. The popular MPI implementation MPICH4.0 was installed in both setup to provide the MPI environment to compile and run parallel GA's for this project. This involved carrying out other required installation, configuring and administrative tasks on Ubuntu Server 16.04 Linux distribution.
+
+\section{Objectives}
+The primary objectives are twofold:
+\begin{enumerate}
+	\item Parallelise a Simple Genetic Algorithm using MPI for deployment on a distributed memory architecture such as a Beowulf cluster, and
+	\item Profile  the performance when free parameters are modified such as the number of nodes in the cluster and population size of the SGA.
+\end{enumerate}
+
+Since this project spans to a dimension that covers quite few challenging topics in computing, the secondary objectives of this projects are listed as below:
+\begin{itemize}
+	\item Implementing and administering Beowulf Cluster
+	\item Learning about parallel computing technology
+	\item Learning about parallel programming techniques
+	\item Study of Message-Passing-Interface(MPI) API
+	\item Study of OpenMP API
+	\item Exploring Simple Genetic Algorithms
+	\item Exploring the parallelisation techniques of GAs
+\end{itemize}
+
+\section{Contributions}
+This author is not aware of any other existing parallel Genetic Algorithm implementation using Message Passing Interface. The work done on parallelising GA in this project and carried out empirical studies on performance by varying population size on a Beowulf cluster is thought to be first in this field.
+
+
+\section{Methodology}
+The following methodology were adapted for this project:
+
+\begin{enumerate}
+	\item Define the research question
+	
+	The first step into this project was to identify what is the research question that this project is going to answer. There are many aspects in a parallel implementation of SGA to experiment with. We identified how the performance of a parallel GA reflects in terms of number of processes and in terms of population size.
+	\item Systematic Literature Review
+	
+The next step is to identify and select articles, books and Internet resources that are relevant for this project. This is how one carries out research on the topics of Parallelisation, Cluster computing, OpenMP and MPI, and Genetic Algorithms.
+
+	\item Propose a working hypothesis
+	
+	\item Define parameter of the empirical study clearly specify the objectives of each test case
+	
+	\item Build the prototype necessary to generate the data for the empirical study
+	\item Run the experiments and capture the data
+	\item Analyse the results to see if they answer the research question by supporting the working hypothesis.
+	\begin{enumerate}
+		\item If not, go back to step 3.
+		\item If new results are obtained, go back to step 1.
+	\end{enumerate}
+\end{enumerate}
+
+
+
+\section{Overview of the Report}
+This report is broken into few major sections.
+\paragraph{Introduction}
+This section contains a basic overview of the project, objectives, motivations and a brief discussions on other contributions related to this project.
+\paragraph {Background Research}
+This section discusses the findings of existing research in the area of parallel computing, OpenMP, MPI, Simple Genetic Algorithms and Parallel Genetic Algorithms.
+\paragraph {Design and Implementation}
+This section describes the design and implementation part of the project under taken. It covers the steps of implementing Beowulf clusters, Parallel implementation of Simple Genetic Algorithms, product development tools and techniques.
+\paragraph {Empirical Studies}
+This section contains the findings and comparative analysis of performance of implemented parallel GA's on Beowulf cluster.
+\paragraph {Discussion and Conclusions}
+This section contains the discussions on findings in empirical studies and conclusions.
+
+
+\section{Motivation}
+During my Co-Operative(COOP) education placement at Intel I worked with teams on a number projects on computational intensive network packet processing. These application demand fully utilising the multi-core Intel Xeon processors for increased throughput. While in there I also came across many other projects in the area of Software Defined Networking(SDN) and Network Function Virtualisation(NFV). Even though each projects were different in their own field, one thing were common. These projects were addressing a common aspect; how to increase the data processing performance. The obvious answer to this question is parallel processing and multi-threading. Programmer must be able to write parallel programs to take advantage of these multi-core systems.
+
+I realised the importance of the parallel programming while working on these real world projects at my COOP placements. My main motivation for this project is to learn about parallel programming.
+
+I am also interested on Evolutionary Algorithms and their application in computation. While studying Intelligent System(CS4006) module for this course we were introduced to Genetic Algorithms. Prior to that I had no idea how the evolutionary theories can be applied to find solution that otherwise impossible to find or too costly. For that module I worked on an individual project on optimal visualisation of graph using Simple Genetic Algorithms which I enjoyed very much.
+
+When I found this project on the FYP proposal list, I approached my supervisor to express my interests on this project. However, this project involves implementing MPI on Beowulf cluster. Neither of these terms I was familiar with. But I was equally excited to learn about cluster computing and programming using MPI. I saw this as a great opportunity to step into the High Performance Computing area. Which is exciting!
+

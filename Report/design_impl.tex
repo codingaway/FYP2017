@@ -1,0 +1,21 @@
+\chapter{Design and Implementation}
+
+\section{Introduction}
+In this chapter all aspects of design and implementation that were done for this project are discussed. A parallel infrastructure was essential for this project for implementing the PGA using Message Passing Interface. A considerable time and effort were made to implement and configure the Beowulf cluster to facilitate the parallel infrastructure for the project. Our original idea was to use an existing Beowulf system in University's laboratory. Later it was discovered that, the most of the hardware of that Beowulf system were dismounted and no longer suitable for this project. So, the the most obvious alternative was to build a Beowulf cluster for this project. At first, a virtual Beowulf system was simulated on a dual core MacBook. Then an actual hardware based Beowulf system was implemented using multiple old PC's. After all, this is the noble idea of a Beowulf system to have it built using hardware laying around  that have very little or no use at all.
+
+Another important part of implementing a PGA, we needed to identify a suitable existing SGA implementation. Even though the Genetic Algorithm was not the centre theme of this project, it was very important to do a considerable background studies in GA to understand the underlying concepts well. It was also important to understand and identify different techniques of parallelising GAs. Much efforts and time were put into understanding two different implementation of SGA and their suitability on parallelising using MPI in details for this project which are discussed in this chapter.
+
+With PGA implementation, we were faced with many issues and challenges. Some of these issues were identified during PGA implementation and some were identified during empirical studies. Which resulted in implementing 3 versions of PGA. 
+
+A lot efforts were made to create prototypes using python scripts to gather experiments data and use gnuplot to visualise the results to compare and contrast to validate the hypotheses relating to PGA performance.
+
+\input{design/beowulf_clusters}
+\input{design/oo_ga}
+\input{design/proc_ga}
+\input{design/parallel_ga}
+\input{design/testing}
+
+\section{Discussion}
+The Beowulf implementation required a further steps for administrative tasks such and allowing remote access using vncserver, configuring ddns so that the system is accessible while not working from home. Since, the development needed the cluster setup to compile and and run MPI program the Integrated Development Environment set was also configured so that it able to use the remote cluster infrastructure. The necessary details are omitted here because of space constraint and they are not the main focus point of this project.
+
+As described in previous section in this chapter, in this project we only explored one model of parallel GA which is master-slave model. In conjunction with the tests results and experiments shown in next chapter we see that pure master-slave model of PGA(PGA v1) did not give us any speed up at all, which is understandable since the communication overhead for message-passing actually more costly than actual computation done by multiple nodes. With PGA v2 where we changed the algorithm to utilise all nodes to do the GA operations instead of just computing fitness value we started to see speedup improvements. But this gains were not as much as expected. Lastly, in PGA v3 we limited the selection space to the subpopulation that a node operates on. This implementation gives us a good speedup gains. However, as we can see from the tests result of PGA v3 the actual outcome of GA is slightly worse than that of original SGA. That is because PGA v3 is close to a distributed PGA model as discussed in Section 2.5.3 without any migration policy. Next logical step of this project would be to implement a distributed model of PGA with a migration policy. Due to the time constraint of this project we needed to stop at the PGA v3.

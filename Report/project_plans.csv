@@ -1,0 +1,32 @@
+ID,Name,Begin date,End date,Duration,Completion,Cost,Coordinator,Predecessors,Outline number,Resources,Web Link,Notes
+0,Submit Project Proposal Form,9/9/16,9/15/16,5,100,0,,,1,,,
+1,Initial research,9/16/16,10/7/16,16,0,0,,0,2,,,
+32,Create Project plans,8/22/16,8/22/16,1,0,0,,,3,,,
+3,Research on Beowulf Clusters,10/24/16,10/28/16,5,0,0,,,4,,,
+10,Prepare Presentation [Sem1],9/26/16,10/7/16,10,0,0,,,5,,,
+11,Project Presentation,10/10/16,10/10/16,0,0,0,,10,6,,,
+4,Implement Virtual Clusters,10/3/16,10/14/16,10,0,0,,,7,,,
+76,Implementation of HW Beowulf,11/15/16,11/30/16,12,0,0,,,8,,,
+5,Research on MPI,9/26/16,10/28/16,25,0,0,,,9,,,
+7,Research on SGA,12/15/16,12/30/16,12,0,0,,,10,,,
+14,Research on OpenMP,11/22/16,12/30/16,29,0,0,,,11,,,
+38,Interim Report Writing,9/26/16,11/11/16,35,0,0,,,12,,,
+16,Interim Report,10/12/16,1/5/17,62,0,0,,,13,,,
+8,Identify a target sequential solution & dataset,1/23/17,1/30/17,6,0,0,,,14,,,
+9,Design,1/31/17,2/7/17,6,0,0,,8,15,,,
+12,Deadline Agreement form,10/10/16,10/10/16,0,0,0,,,16,,,
+13,Supervisor marking scheme,10/10/16,10/10/16,0,0,0,,,17,,,
+15,Draft Report,1/23/17,3/9/17,34,0,0,,,18,,,
+17,Implementation of pGA,2/8/17,2/21/17,10,0,0,,9;76,19,,,
+18,Testing,2/22/17,2/28/17,5,0,0,,17,20,,,
+19,Experiment and Result evaluation,3/1/17,3/8/17,6,0,0,,17;18,21,,,
+20,Prepare Demo,3/10/17,3/29/17,14,0,0,,,22,,,
+21,Final Demo Days,3/29/17,3/29/17,1,0,0,,,23,,,
+22,Final Submission product,4/4/17,4/4/17,0,0,0,,,24,,,
+23,Final Submission Report,4/18/17,4/18/17,0,0,0,,,25,,,
+24,Final Cut-off date,4/27/17,4/27/17,0,0,0,,,26,,,
+
+
+ID,Name,Default role,e-mail,Phone,Assignment role,Standard rate
+0,Abdul Halim,Default:1,,,,0
+1,Abdul Halim,SoftwareDevelopment:2,,,,0

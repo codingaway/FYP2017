@@ -1,0 +1,192 @@
+\label{mpi}
+MPI stands for \textbf{M}essage \textbf{P}assing \textbf{I}nterface. MPI is a standard specification for Message-Passing parallel programming model in distributed memory architecture. In Message-passing parallel model data is moved from one process's address space to another through cooperative message exchange. MPI itself is not a library but simply provides a standard specification for writing message passing programs. This standard defines the syntax and semantics of essential library routines that facilitates developers writing platform independent message-passing programs in C, C++ and Fortran. \citep{Barney:16-mpi}
+
+MPI standard was a result of the works of many individuals and groups to address the problems they encounter in distributed memory model parallel programming. The need for an standard arose when a number of incompatible tools were developed independently by different groups. In 1992 a workshop on standards for Message-Passing in distributed memory environment was held sponsored by Center for Research on Parallel Computing, Williamsburg. This was followed by a draft proposal of MPI1 and forming of MPI Working group. The MPI1 draft proposal was presented in following year at Supercomputing 93 conference. MPI Working group held regular meetings, public comments and open mailing lists which later on constituted as \textbf{MPI Forum} \citep{Barney:16-mpi}. The current version of MPI standard is MPI 3.1 which was approved by MPI forum in June 2015. The next major version, MPI 4.0 is work in progress, which focuses on support on fault tolerance, improved support for hybrid programming models and application hints to MPI libraries to enable optimisations\citep{mpi-forum:16}.
+
+\subsubsection{MPI Concepts}
+The Message-passing approach makes data exchange cooperative between processes. Data is explicitly sent by one process and received by another. MPI is communication protocol and semantic specifications for how its features must behave in any implementation \citep{Gropp:99}.
+
+To discuss various MPI constructs an example of matrix multiplication program using MPI is shown in Listing \ref{lst:mpi_example}. This code example is referenced in following subsections to explain some of these constructs.
+
+\subsubsection{General MPI Program Structure}
+Figure \ref{fig:mpi_structure} shows a general MPI program structure. MPI header files must be included by all programs that make MPI library call. MPI library calls are only permissible after initialising and before terminating the MPI environment\citep{Barney:16-mpi}. In the example program in Listing \ref{lst:mpi_example} line 28 initialises the MPI environment and line 111 terminates it.
+
+\begin{figure}[!htb]
+\begin{center}
+  \includegraphics[width=.6 \linewidth]{figs/mpi_structure.png}
+  \caption{MPI program structure}
+  \label{fig:mpi_structure}
+  \end{center}
+\end{figure}
+
+\subsubsection{Groups and Communicators}
+MPI uses groups and communicators objects to define which process can communicate with each other \citep{Barney:16-mpi}. Processes can be collected into groups. Groups are implemented as ordered list of process identifiers stored in and integer array \citep{Gropp:96}. Each messages is sent in a context and must be received in the same context. A group and context together from a communicator \citep{Gropp:99}. \textbf{MPI\_COMM\_WORLD} is a predefined communicator that includes all MPI processes. Line 30 in Listing \ref{lst:mpi_example} shows that communicator \textbf{MPI\_COMM\_WORLD}  is used to query about number of available processes. 
+
+\subsubsection{Rank}
+In MPI  a process is identified by its \emph{rank} in the group associated with a communicator \citep{Gropp:99}. A \emph{rank} is a unique integer identifier. It is assigned by the system when a process is initialised. These identifies are contiguous and starts at '0'. The \emph{rank} id's are used by the programmers to specify the source and destination of messages \citep{Barney:16-mpi}.  Line 29 in Listing \ref{lst:mpi_example} shows that a process is querying its rank ID within the communicator \textbf{MPI\_COMM\_WORLD} .
+
+\subsubsection{Error Handling}
+The default action of an MPI call is to abort if there is a runtime error. However, most of the MPI function calls include a return/error code parameter. This allows a programmer to override the default behaviour of handling errors. \citep{Barney:16-mpi}
+
+\subsubsection{Point-to-Point Communication}
+Point-to-Point communication involves only two processes. One process performs send operation and other one performs receive operation. In MPI there are different types of send receives routines available such as:
+\begin{itemize}
+    \item \textbf{Synchronous send}
+    
+MPI\_Ssend() sends a message and blocks until the application buffer in the sending task is free for reuse and the destination process has started to receive the message.
+    
+    \item \textbf{Blocking send / blocking receive}
+    
+MPI\_Send()  is a basic blocking send operation. This routine returns only after the application buffer in the sending task is free for reuse. Similarly, MPI\_Recv() is a basic blocking receive operation that receive a message and block until the requested data is available in the application buffer in the receiving task.
+
+    \item \textbf{Non-blocking send / non-blocking receive}
+    
+MPI\_Isend() is a non-blocking send operation that identifies an area in memory to serve as a send buffer. Processing continues immediately without waiting for the message to be copied out from the application buffer. A communication request handle is returned for handling the pending message status. Likewise, MPI\_Irecv()  is non-blocking  receive operation that identifies an area in memory to serve as a receive buffer. Processing continues immediately without actually waiting for the message to be received and copied into the the application buffer.
+
+\end{itemize}
+\citep{Barney:16-mpi}
+
+Line 59 in Listing \ref{lst:mpi_example} shows an example of blocking send using MPI\_Send() routine my master process. There is a corresponding blocking receive call using MPI\_Recv() at line 107.
+
+\begin{lstlisting}[language=C, caption={An example of Matrix multiplication using MPI. \citep{Barney:16-mpi}}, label={lst:mpi_example}]
+include "mpi.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+#define NRA 62                 /* number of rows in matrix A */
+#define NCA 15                 /* number of columns in matrix A */
+#define NCB 7                  /* number of columns in matrix B */
+#define MASTER 0               /* taskid of first task */
+#define FROM_MASTER 1          /* setting a message type */
+#define FROM_WORKER 2          /* setting a message type */
+
+int main (int argc, char *argv[])
+{
+int	numtasks,  /* number of tasks in partition */
+	taskid,			 /* a task identifier */
+	numworkers,	 /* number of worker tasks */
+	source,			 /* task id of message source */
+	dest,				 /* task id of message destination */
+	mtype,			 /* message type */
+	rows,			   /* rows of matrix A sent to each worker */
+	averow, extra, offset, /* used to determine rows sent to each worker */
+	i, j, k, rc;           /* misc */
+double	a[NRA][NCA],           /* matrix A to be multiplied */
+	b[NCA][NCB],           /* matrix B to be multiplied */
+	c[NRA][NCB];           /* result matrix C */
+MPI_Status status;
+
+MPI_Init(&argc,&argv);
+MPI_Comm_rank(MPI_COMM_WORLD,&taskid);
+MPI_Comm_size(MPI_COMM_WORLD,&numtasks);
+if (numtasks < 2 ) {
+  printf("Need at least two MPI tasks. Quitting...\n");
+  MPI_Abort(MPI_COMM_WORLD, rc);
+  exit(1);
+  }
+numworkers = numtasks-1;
+
+/********** master task ************************/
+   if (taskid == MASTER)
+   {
+      printf("mpi_mm has started with %d tasks.\n",numtasks);
+      printf("Initializing arrays...\n");
+      for (i=0; i<NRA; i++)
+         for (j=0; j<NCA; j++)
+            a[i][j]= i+j;
+      for (i=0; i<NCA; i++)
+         for (j=0; j<NCB; j++)
+            b[i][j]= i*j;
+
+      /* Send matrix data to the worker tasks */
+      averow = NRA/numworkers;
+      extra = NRA%numworkers;
+      offset = 0;
+      mtype = FROM_MASTER;
+      for (dest=1; dest<=numworkers; dest++)
+      {
+         rows = (dest <= extra) ? averow+1 : averow;   	
+         printf("Sending %d rows to task %d offset=%d\n",rows,dest,offset);
+         MPI_Send(&offset, 1, MPI_INT, dest, mtype, MPI_COMM_WORLD);
+         MPI_Send(&rows, 1, MPI_INT, dest, mtype, MPI_COMM_WORLD);
+         MPI_Send(&a[offset][0], rows*NCA, MPI_DOUBLE, dest, mtype, MPI_COMM_WORLD);
+         MPI_Send(&b, NCA*NCB, MPI_DOUBLE, dest, mtype, MPI_COMM_WORLD);
+         offset = offset + rows;
+      }
+
+      /* Receive results from worker tasks */
+      mtype = FROM_WORKER;
+      for (i=1; i<=numworkers; i++)
+      {
+         source = i;
+         MPI_Recv(&offset, 1, MPI_INT, source, mtype, MPI_COMM_WORLD, &status);
+         MPI_Recv(&rows, 1, MPI_INT, source, mtype, MPI_COMM_WORLD, &status);
+         MPI_Recv(&c[offset][0], rows*NCB, MPI_DOUBLE, source, mtype, MPI_COMM_WORLD, &status);
+         printf("Received results from task %d\n",source);
+      }
+
+      /* Print results */
+      printf("***************************\n");
+      printf("Result Matrix:\n");
+      for (i=0; i<NRA; i++)
+      {
+         printf("\n"); 
+         for (j=0; j<NCB; j++) 
+            printf("%6.2f   ", c[i][j]);
+      }
+      printf("\n***********************\n");
+      printf ("Done.\n");
+   }
+
+/********** worker task ************************/
+   if (taskid > MASTER)
+   {
+      mtype = FROM_MASTER;
+      MPI_Recv(&offset, 1, MPI_INT, MASTER, mtype, MPI_COMM_WORLD, &status);
+      MPI_Recv(&rows, 1, MPI_INT, MASTER, mtype, MPI_COMM_WORLD, &status);
+      MPI_Recv(&a, rows*NCA, MPI_DOUBLE, MASTER, mtype, MPI_COMM_WORLD, &status);
+      MPI_Recv(&b, NCA*NCB, MPI_DOUBLE, MASTER, mtype, MPI_COMM_WORLD, &status);
+
+      for (k=0; k<NCB; k++)
+         for (i=0; i<rows; i++)
+         {
+            c[i][k] = 0.0;
+            for (j=0; j<NCA; j++)
+               c[i][k] = c[i][k] + a[i][j] * b[j][k];
+         }
+      mtype = FROM_WORKER;
+      MPI_Send(&offset, 1, MPI_INT, MASTER, mtype, MPI_COMM_WORLD);
+      MPI_Send(&rows, 1, MPI_INT, MASTER, mtype, MPI_COMM_WORLD);
+      MPI_Send(&c, rows*NCB, MPI_DOUBLE, MASTER, mtype, MPI_COMM_WORLD);
+   }
+   MPI_Finalize();
+}
+\end{lstlisting}
+
+\subsubsection{Collectives Communication}
+Collective Communication involves all processes in a process group. There are three types of Collective Communication routines:
+\begin{description}
+	\item \textbf{Synchornization}:
+	These routines are used for process to wait until all members of the group have reached the synchronization point.
+	\item \textbf{Data movement}:
+	These type of routines are used to broadcast data to all processes, as well as scatter, gather or reduction of data to and from other processes.
+	\item \textbf{Collective Computation}:
+	These routines are use for one process of a communicator group to collect data from other members and perform operation on those.
+\end{description}
+\citep{Barney:16-mpi}
+
+\subsubsection{Environment management}
+MPI provides routines for managing execution environment to initialise and terminating MPI environment. The MPI environment is used to determine how many processes are participating in a computation and their rank within the group\citep{Gropp:96}. Environment management routines include querying rank identity as well as some other execution time related operations\citep{Barney:16-mpi}.
+
+\subsubsection{Derived Data-types}
+MPI predefines its primitive data types to achieve portability. This is because MPI supports heterogeneous environments(i.e different nodes) where the primitive types might have different representation\citep{mpi-forum:type-match}. Primitive data are contiguous. MPI also provides mechanism for user defined data structures based on sequence of these MPI primitive data types. Such data types are known as Derived data types and they are non-contiguous\citep{Barney:16-mpi}. An example of MPI derived datatype can been seen in Listing \ref{lst:pga_mpi_create_struct} which is an implementation parallel GA chromosome data structure.
+
+\subsubsection{MPI advantages}
+\begin{itemize}
+	\item MPI provides a powerful, efficient and portable way to express parallel programs
+	\item MPI is only Message-passing library that supports a standard, thus supported by almost any HPC platform
+	\item There is little or no need for source code modification to port an application to a different platform that supports MPI standard
+	\item Vendors can exploit native hardware features to improve performance on their own MPI implementation
+	\item Popular MPI implementations are available both vendor and public domain
+\end{itemize}
+\citep{Barney:16-mpi}

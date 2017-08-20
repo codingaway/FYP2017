@@ -1,0 +1,56 @@
+\select@language {english}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Sequential processing where instructions (t1, t2, ..., tN) of a problem are executed by a single processors sequentially. \citep {Barney:16}\relax }}{9}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Parallel processing where a problem is broken down into a number of sub-problems with their own set of instructions (t1, t2, ..., tN) that can be executed in parallel by different processors. \citep {Barney:16}\relax }}{10}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces A Shared Memory model where multiple CPU is sharing a common memory space. \citep {Barney:16}\relax }}{13}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces A Distributed Memory model where multiple CPUs have their own memory spaces but connected together with network bus to exchange messages. \citep {Barney:16}\relax }}{13}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces A Hybrid Memory model where multiple shared-memory systems are interconnected together by a network communication to exchange messages. \citep {Barney:16}\relax }}{14}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Amdahl's Law shows that speedup increases both as a function of the percentage of parallelism and the number of parallel units available. \citep {rtc_amdals:online}\relax }}{15}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Comparison of speedup of fixed-sized and scaled-sizes parallel portion of a program.\relax }}{16}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Fork- Join model. \citep {A1:fork-join}\relax }}{19}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces MPI program structure\relax }}{26}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces A basic Beowulf architecture. \citep {Beowulf:img}\relax }}{34}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Single-point crossover\relax }}{40}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Multi-point crossover\relax }}{40}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Uniform crossover\relax }}{41}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Mutation\relax }}{42}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Master-Slave PGA model.\relax }}{46}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Distributed PGA model.\relax }}{47}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Cellular PGA model.\relax }}{47}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Layers in a Cluster\relax }}{50}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A typical Beowulf setup\relax }}{52}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Class diagram of Object-oriented SGA\relax }}{61}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Flowchart diagram of Implemented master-slave Parallel GA\relax }}{68}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces PGA v1 model\relax }}{71}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces PGA v2 model\relax }}{74}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces PGA v3 model\relax }}{78}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces SGA output - Top part\relax }}{86}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces SGA output - Bottom part\relax }}{86}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces PGA v1 output - Top part\relax }}{87}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces PGA v2 output - Bottom part\relax }}{87}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces PGA v1 output - Top part\relax }}{88}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces PGA v2 output - Bottom part\relax }}{88}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces PGA v3 output - Top part\relax }}{89}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces PGA v3 output - Bottom part\relax }}{89}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Experiment 1 - Runtime comparison SGA vs PGA v1.\relax }}{94}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Experiment 1: Speedup graph SGA vs PGA v1.\relax }}{95}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Experiment 2 - Runtime comparison SGA vs. PGA v1.\relax }}{96}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Experiment 2 - Speedup graph SGA vs. PGA v1.\relax }}{97}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Experiment 3 - Runtime comparison SGA vs. PGA v2.\relax }}{98}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Experiment 3 - Speedup graph SGA vs. PGA v2.\relax }}{99}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Experiment 4 - Runtime comparison SGA vs. PGA v2.\relax }}{100}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Experiment 4 - Speedup graph SGA vs PGA v2.\relax }}{101}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Experiment 5 - Runtime comparison SGA vs. PGA v3.\relax }}{102}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Experiment 5 - Speedup graph SGA vs. PGA v3.\relax }}{103}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Experiment 6 - Runtime comparison SGA vs. PGA v3.\relax }}{105}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Experiment 6 - Speedup graph SGA vs. PGA v3.\relax }}{105}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Gantt Project plans - List\relax }}{114}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Gantt Project plans - Graph\relax }}{115}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces PGA Version control logs.\relax }}{116}
+\addvspace {10\p@ }

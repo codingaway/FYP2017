@@ -1,0 +1,10 @@
+# Fdb version 3
+["pdflatex"] 1488138879 "background.tex" "background.pdf" "background" 1488138879
+  "/usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf" 1463093894 31953 b9489e6e586f798610c60aec1f5ec548 ""
+  "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1473784825 3873397 29a29250a002b268bfe64cee23c9ff2b ""
+  "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
+  "background.aux" 1488138857 8 a94a2480d3289e625eea47cd1b285758 ""
+  "background.tex" 1487167751 474 fd474891c81b4ed401d62f11f1de1c8d ""
+  (generated)
+  "background.log"
+  "background.pdf"
